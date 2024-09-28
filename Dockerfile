@@ -9,3 +9,8 @@ RUN pip install --upgrade pip \
 #COPY --from=base /usr/local/lib/python3.10/site-packages/ /usr/local/lib/python3.10/site-packages/
 
 COPY . .
+
+RUN mkdir ./images
+RUN pip install — no-cache-dir -r requirements.txt
+
+CMD [“python”, “./main.py”]
